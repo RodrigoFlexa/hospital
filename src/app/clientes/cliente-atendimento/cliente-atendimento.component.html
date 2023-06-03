@@ -32,7 +32,6 @@
               <p><strong>Espécie:</strong> {{ cliente.especie }}</p>
               <p><strong>Raça:</strong> {{ cliente.raca }}</p>
               <p><strong>Idade:</strong> {{ cliente.idade }}</p>
-              <p><strong>Último peso:</strong> 8,5Kg</p>
             </div>
           </div>
         </div>
@@ -58,9 +57,9 @@
     Procedimentos
   </div>
   <div class="card-body">
-    <div class="row">
+    <div class="row" *ngIf="cliente">
       <div class="col-md-4">
-        <a href="#" class="btn btn-primary btn-block btn-lg mb-3" style="background-color: #007bff;">
+        <a href="#" class="btn btn-primary btn-block btn-lg mb-3" [routerLink]="['/cliente/anamnese', cliente.id]" style="background-color: #007bff; ">
           <i class="fas fa-clipboard-check"></i> Anamnese
         </a>
       </div>
@@ -96,7 +95,7 @@
     <h5>Observações</h5>
     <textarea class="form-control" rows="5"></textarea>
   </div>
-  </div>
+</div>
 
 
 

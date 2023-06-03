@@ -11,7 +11,7 @@ import { ClientesModule } from './clientes/clientes.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

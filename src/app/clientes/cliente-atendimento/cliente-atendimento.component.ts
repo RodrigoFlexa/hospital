@@ -14,19 +14,12 @@ import * as Chart from 'chart.js';
 export class ClienteAtendimentoComponent implements OnInit,AfterViewInit {
   cliente: Cliente | undefined;
 
-  @ViewChild('myAreaChart', { static: false }) areaChartRef!: ElementRef;
-  areaChart!: Chart;
-
-
-
-  voltarParaClientes() {
-    this.router.navigate(['/clientes-lista']);
-  }
-
   constructor(private route: ActivatedRoute,private router: Router) {}
 
   ngOnInit() {
-    this.cliente = history.state.cliente;
+    if (history.state && history.state.cliente) {
+      this.cliente = history.state.cliente;
+    }
   }
 
   ngAfterViewInit(): void {
@@ -50,4 +43,19 @@ export class ClienteAtendimentoComponent implements OnInit,AfterViewInit {
     });
 
   }
+
+
+  @ViewChild('myAreaChart', { static: false }) areaChartRef!: ElementRef;
+  areaChart!: Chart;
+
+
+
+  voltarParaClientes() {
+    this.router.navigate(['/clientes-lista']);
+  }
+
+  // do_anamnese(cliente: Cliente) {
+  //   this.router.navigate(['/cliente/anamnese', cliente.id], { state: { cliente } });
+  // }
+
 }

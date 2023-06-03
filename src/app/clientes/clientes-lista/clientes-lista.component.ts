@@ -223,8 +223,8 @@ export class ClientesListaComponent implements OnInit, AfterViewInit {
         language: {
           emptyTable: 'Nenhum dado disponível na tabela',
           info: '',
-          infoEmpty: 'Mostrando 0 até 0 de 0 entradas',
-          infoFiltered: '(filtrado de _MAX_ entradas totais)',
+          infoEmpty: '',
+          infoFiltered: '',
           lengthMenu: 'Exibir _MENU_ entradas',
           loadingRecords: 'Carregando...',
           processing: 'Processando...',
