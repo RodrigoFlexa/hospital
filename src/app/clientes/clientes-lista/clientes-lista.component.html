@@ -5,7 +5,7 @@
 </ol>
 
 <div class="d-flex justify-content-end">
-  <button class="btn btn-primary" (click)="adicionarCliente()">Adicionar Cliente</button>
+  <button class="btn btn-primary" (click)="abrirDialog()">Adicionar Cliente</button>
 </div>
 <br>
 <div class="card mb-4">
@@ -42,3 +42,11 @@
 </div>
 <br>
 <br>
+
+<!-- <div *ngIf="exibirDialog">
+  <app-clientes-form
+    (cancelado)="fecharDialog()"
+    (salvo)="salvarCliente($event)"
+  ></app-clientes-form>
+</div> -->
+

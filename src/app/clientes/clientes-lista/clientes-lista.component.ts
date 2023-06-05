@@ -1,4 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild ,EventEmitter, Output} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+// import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Cliente } from '../clientes';
 import { Router } from '@angular/router';
 import $ from 'jquery';
@@ -199,6 +201,21 @@ export class ClientesListaComponent implements OnInit, AfterViewInit {
     }
   ];
 
+  exibirDialog = false;
+
+  abrirDialog() {
+    this.exibirDialog = true;
+  }
+
+  fecharDialog() {
+    this.exibirDialog = false;
+  }
+
+  salvarCliente(cliente: Cliente) {
+    // Lógica para salvar o cliente
+    console.log(cliente);
+    this.fecharDialog();
+  }
 
   constructor(private router: Router) {}
 
@@ -207,9 +224,6 @@ export class ClientesListaComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/cliente', cliente.id], { state: { cliente } });
   }
 
-  adicionarCliente() {
-    // Lógica para adicionar um novo cliente
-  }
 
   ngOnInit(): void {
   }
